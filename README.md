@@ -13,18 +13,18 @@ Then when is requested it executes the **ffplay** command and starts the music.
 You can automate tasks by making a bash script.    
 ```bash
 {
-  printf("command")
+  echo "command"
 } | python3 musicterm.py     
 ```
 Here is an example.
 ```bash
 {
-  printf("download")
-  printf("keep ballin")
-  printf("1")
-  printf("psong")
-  printf("keep_ballin")
-  printf("exit")
+  echo "download" 
+  echo "keep ballin"
+  echo "1"
+  echo "psong"
+  echo "keep_ballin"
+  echo "exit"
 } | python3 musicterm.py     
 ```
 ## Usage      
