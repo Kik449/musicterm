@@ -29,8 +29,12 @@ They are 12 commands:
 All this is in manual.txt :)      
 
 ## Installing
-Ffplay is needed, install it depending of your operating system.          
-Except that you can run this code to install the other dependencies.
+Ffplay is needed, install it depending of your operating system or linux ditro. 
+```
+apt: sudo apt install ffmpeg
+snap sudo snap install ffmpeg
+```
+Run this code where you want to install the program.       
 ```
 git clone https://github.com/Kik449/musicterm
 cd musicterm
