@@ -10,6 +10,8 @@ This scripts just downloads audio from youtube videos, no api or anything like t
 Then when is requested it executes the **ffplay** command and starts the music.                                
 
 ## Installing
+Ffplay is needed, install it depending of your operating system.          
+Except that you can run this code to install the other dependencies.
 ```
 git clone https://github.com/Kik449/musicterm
 cd musicterm
