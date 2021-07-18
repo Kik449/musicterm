@@ -2,12 +2,12 @@
 A python program to listen to music in terminal.
 
 ## Dependencies
-They are some python3 libraries: **pytube**, **pyfiglet**, **youtube-search-python** and **colorama**.
+They are some python3 libraries: **pytube**, **pyfiglet**, **youtube-search-python** and **colorama**.                                                 
 Also you need **ffplay** command from **FFmeg**.
 
 ## How it works
-This scripts just downloads audio from youtube videos, no api or anything like that needed.
-Then when is requested it executes the **ffplay** command and starts the music.
+This scripts just downloads audio from youtube videos, no api or anything like that needed.                 
+Then when is requested it executes the **ffplay** command and starts the music.                                
 
 ## Installing
 ```
