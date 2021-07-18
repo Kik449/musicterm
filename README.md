@@ -27,6 +27,7 @@ Here is an example.
   echo "exit"
 } | python3 musicterm.py     
 ```
+Remember an ```echo "exit" ``` allways, otherwise it may crash.
 ## Usage      
 Musicterm works with commands.       
 They are 12 commands:         
