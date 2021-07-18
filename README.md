@@ -10,7 +10,7 @@ This scripts just downloads audio from youtube videos, no api or anything like t
 Then when is requested it executes the **ffplay** command and starts the music.
 
 ## Installing
-```bash
+```
 git clone https://github.com/Kik449/musicterm
 cd musicterm
 bash install_py.sh
