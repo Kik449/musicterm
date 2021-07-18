@@ -8,8 +8,8 @@ They are 12 commands:
 5 : append - To ADD a song into a playlist
 6 : dsongs - To DISPLAY all the songs in a playlist
 7 : pplaylist - To REPRODUCE an entry playlist
-8 : rmfp - To REMOVE a song out of a playlist
-9 : psong - To REPRODUCE a songe alone
+8 : rmfp - To REMOVE a song from a playlist
+9 : psong - To REPRODUCE a song alone
 10: dplaylists - To DISPLAY all the playlists
 11: dasongs - To DISPLAY all the downloaded songs
 12: exit - To EXIT the program
