@@ -17,7 +17,7 @@ You can automate tasks by making a bash script.
 } | python3 musicterm.py     
 ```
 For no musicterm output use ```> /dev/null```
-```
+```bash
 {
   echo "command"
 } | python3 musicterm.py > /dev/null
