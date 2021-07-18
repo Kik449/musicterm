@@ -1,5 +1,5 @@
 # Musicterm
-A python program to listen to music in terminal.
+A python program to listen to music from INTERNET in terminal.
 
 ## Dependencies
 They are some python3 libraries: **pytube**, **pyfiglet**, **youtube-search-python** and **colorama**.                                                 
