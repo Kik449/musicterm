@@ -64,7 +64,7 @@ def display_playlists():
 
 def play_playlist(playlist):
     for song in playlists[playlist]["songs"]:
-        print(Fore.LIGHTRED_EX+"Playing: "+Fore.MAGENTA+ song["title"]+Fore.RESET)
+        print("\b\b"+Fore.LIGHTRED_EX+"Playing: "+Fore.MAGENTA+ song["title"]+Fore.YELLOW+" ^C "+Fore.GREEN+">>"+Fore.RESET)
         play_song("musicterm/"+base64_encoding(song["title"]))
 
 def display_songs(playlist):
@@ -129,7 +129,7 @@ except:
     print("No data file founed!")
 while(not exit):
     try:
-        y = input(Fore.LIGHTRED_EX+"TERM"+Fore.RESET+"~$ ")
+        y = input(Fore.LIGHTRED_EX+"\b\bTERM"+Fore.RESET+"~$ ")
         y_s = y.split(" ")
         if y_s[0] == "download":
             song = search(input(Fore.YELLOW+"Song Name"+Fore.RESET+"~$ "),9)
@@ -162,7 +162,7 @@ while(not exit):
             delete_from_playlist(pname,songs[sname])
         if y_s[0] == "psong":
             sname = input(Fore.YELLOW+"Song Name"+Fore.RESET+"~$ ")
-            print(Fore.LIGHTRED_EX+"Playing: "+Fore.MAGENTA+ sname+Fore.RESET)
+            print(Fore.LIGHTRED_EX+"\b\bPlaying: "+Fore.MAGENTA+ sname+Fore.YELLOW+" ^C "+Fore.GREEN+">>"+Fore.RESET)
             play_song("musicterm/"+base64_encoding(songs[sname]["title"]))
         if y_s[0] == "dplaylists":
             display_playlists()
@@ -170,7 +170,7 @@ while(not exit):
             display_all_songs()
         if y_s[0] == "exit":
             exit = True
-    except:
+    except Excpetion as t:
         print("Something "+Fore.LIGHTRED_EX+ "failed" + Fore.RESET + "!")
 print("Bye!")
 alldata["playlists"] = playlists
