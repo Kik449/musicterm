@@ -16,6 +16,12 @@ You can automate tasks by making a bash script.
   echo "command"
 } | python3 musicterm.py     
 ```
+For no musicterm output use ```> /dev/null```
+```
+{
+  echo "command"
+} | python3 musicterm.py > /dev/null
+```
 Here is an example.
 ```bash
 {
