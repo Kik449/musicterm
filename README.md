@@ -9,6 +9,24 @@ Also you need **ffplay** command from **FFmpeg**.
 This scripts just downloads audio from youtube videos, no api or anything like that needed.                 
 Then when is requested it executes the **ffplay** command and starts the music.                                
 
+## Automate tasks with bash
+You can automate tasks by making a bash script.    
+```
+{
+  printf("command")
+} | python3 musicterm.py     
+```
+Here is an example.
+```
+{
+  printf("download")
+  printf("keep ballin")
+  printf("1")
+  printf("psong")
+  printf("keep_ballin")
+  printf("exit")
+} | python3 musicterm.py     
+```
 ## Usage      
 Musicterm works with commands.       
 They are 12 commands:         
