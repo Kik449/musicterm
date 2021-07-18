@@ -32,7 +32,7 @@ All this is in manual.txt :)
 Ffplay is needed, install it depending of your operating system or linux ditro. 
 ```
 apt: sudo apt install ffmpeg
-snap sudo snap install ffmpeg
+snap: sudo snap install ffmpeg
 ```
 Run this code where you want to install the program.       
 ```
