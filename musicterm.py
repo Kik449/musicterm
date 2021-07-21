@@ -49,7 +49,7 @@ def add_to_playlist(song,playlist):
     playlists[playlist]["songs"].append(song)
 
 def play_song(title):
-    os.system("ffplay -autoexit -loglevel quiet -volume " + str(config["volume"])+" -nodisp "+title+".mp4 ")
+    os.system("ffplay -autoexit -loglevel quiet -volume " + str(config["volume"])+" -nodisp "+title+".mp4 > /dev/null" )
 
 def create_playlist(name):
     playlists[name] = {}
@@ -102,6 +102,16 @@ def save_json(dicti,name):
     file.write(json.dumps(dicti))
     file.close()
 
+2 : mkplaylist - To CREATE a playlist
+3 : rmplaylist - To REMOVE a playlist
+4 : rmsong - To REMOVE a song
+5 : append - To ADD a song into a playlist
+6 : dsongs - To DISPLAY all the songs in a playlist
+7 : pplaylist - To REPRODUCE an entry playlist
+8 : rmfp - To REMOVE a song from a playlist
+9 : psong - To REPRODUCE a song alone
+10: dplaylists - To DISPLAY all the playlists
+11: dasongs - To DISPLAY all the downloaded songs
 def load_json(name):
     file = open(name,"rb")
     content = file.read()
