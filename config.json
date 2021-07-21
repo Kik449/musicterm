@@ -1,0 +1,12 @@
+{
+  "theme": 
+  {
+    "color1": "\u001b[91m", 
+    "color2": "\u001b[94m",
+    "color3": "\u001b[92m",
+    "color4": "\u001b[93m",
+    "color5": "\u001b[95m"
+  }, 
+  "volume": "10", 
+  "banner_text": "betatest"
+}
