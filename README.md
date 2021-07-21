@@ -52,9 +52,7 @@ They are 12 commands:
 12: exit - To EXIT the program          
        
 All this is in manual.txt :)      
-## Configuration
-This script is configured using bash colors.      
-[Here](https://dev.to/ifenna__/adding-colors-to-bash-scripts-48g4) is a simple guide.      
+## Configuration        
 Set the volume from 0-100 in string format not int (save the value from 0-100 between '"')
 In the config file you can also change the banner text in banner_text.
 ## Installing
