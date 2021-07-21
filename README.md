@@ -53,7 +53,7 @@ They are 12 commands:
        
 All this is in manual.txt :)      
 ## Configuration        
-Set the volume from 0-100 in string format not int (save the value from 0-100 between '"')
+Set the volume from 0-100 in string format not int (save the value from 0-100 between '"')           
 In the config file you can also change the banner text in banner_text.
 ### Colors cheatsheet
 Prefix: ```\u001b[```
