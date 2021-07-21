@@ -57,24 +57,15 @@ Set the volume from 0-100 in string format not int (save the value from 0-100 be
 In the config file you can also change the banner text in banner_text.
 ### Colors cheatsheet
 Prefix: ```\u001b[```
-#### Normal
-BLACK 30m    
-RED 31m      
-GREEN 32m      
-YELLOW 33m      
-BLUE 34m       
-MAGENTA 35m     
-CYAN 36m      
-WHITE 37m     
-### Light
-BLACK 90m    
-RED 91m      
-GREEN 92m      
-YELLOW 93m      
-BLUE 94m       
-MAGENTA 95m     
-CYAN 96m      
-WHITE 97m     
+#### Normal           Light
+BLACK 30m         BLACK 90m   
+RED 31m           RED 91m    
+GREEN 32m         GREEN 92m      
+YELLOW 33m        YELLOW 93m      
+BLUE 34m          BLUE 94m       
+MAGENTA 35m       MAGENTA 95m     
+CYAN 36m          CYAN 96m      
+WHITE 37m         WHITE 97m     
 ## Installing
 Ffplay is needed, install it depending of your operating system or linux ditro. 
 ```
