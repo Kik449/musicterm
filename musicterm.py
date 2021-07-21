@@ -133,7 +133,7 @@ try:
     pla_l = alldata["pla_l"]
     exit = False
 except:
-    print("No data file founed!")
+    print("No data or config file founed!")
 banner = pyfiglet.figlet_format(config["banner_text"], font = "slant"  )
 print(config["theme"]["color3"] + banner + Fore.RESET)
 while(not exit):
