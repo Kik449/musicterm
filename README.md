@@ -2,7 +2,7 @@
 A python program to listen to music from INTERNET in terminal.
 
 ## Dependencies
-They are some python3 libraries: **pytube**, **pyfiglet**, **youtube-search-python** and **colorama**.                                                 
+They are some python3 libraries: **youtube_dl**, **pyfiglet**, **youtube-search-python** and **colorama**.                                                 
 Also you need **ffplay** command from **FFmpeg**.
 
 ## How it works
