@@ -169,8 +169,8 @@ while(not exit):
             display_all_songs()
         if y_s[0] == "exit":
             exit = True
-    except Exception as t:
-        print("Something "+Fore.LIGHTRED_EX+ "failed" + Fore.RESET + "! " + str(t))
+    except:
+        print("Something "+Fore.LIGHTRED_EX+ "failed" + Fore.RESET + "!")
 print("Bye!")
 alldata["playlists"] = playlists
 alldata["songs"] = songs
