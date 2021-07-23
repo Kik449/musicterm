@@ -81,4 +81,5 @@ bash install_py.sh
 python3 musicterm.py
 ```
 ## Info
-Developed and tested in **Linux Lite** and **Arch** with NVIM editor.
+Developed and tested in **Linux Lite** and **Arch** with NVIM editor.      
+And some features in Pops with the help of [ru55o](https://github.com/byru55o).
