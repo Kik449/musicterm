@@ -1,7 +1,7 @@
 from youtube_dl import YoutubeDL
 from youtubesearchpython import VideosSearch
 from colorama import Fore
-import base64,os,json,pyfiglet
+import base64,os,json,pyfiglet,random,time
 
 playlists = {}
 songs = {}
@@ -14,16 +14,21 @@ def search(content,limit):
     return_dict = {}
     search = VideosSearch(content, limit = limit)
     count = 0
-    for video in search.result()["result"]:        
-        count += 1
-        title = video["title"]
-        if len(title) > 40:
-            ex = len(title)-37
-            title = title[:-ex]+"..."
-        if len(title) < 40:
-            title += " "*(40-len(title))
-        print(config["theme"]["color1"]+str(count)+Fore.RESET+": ("+config["theme"]["color2"]+title+Fore.RESET+")---("+config["theme"]["color3"]+video["duration"]+Fore.RESET+")")
-        return_dict[count-1] = { "title": content.replace(" ","_"),"url":video["link"],"time": video["duration"]}
+    try:
+        for video in search.result()["result"]:        
+            count += 1
+            title = video["title"]
+            if len(title) > 40:
+                ex = len(title)-37
+                title = title[:-ex]+"..."
+            if len(title) < 40:
+                title += " "*(40-len(title))
+            print(config["theme"]["color1"]+str(count)+Fore.RESET+": ("+config["theme"]["color2"]+str(title)+Fore.RESET+")---("+config["theme"]["color3"]+str(video["duration"])+Fore.RESET+")")
+            return_dict[count-1] = { "title": content.replace(" ","_"),"url":video["link"],"time": video["duration"]}
+    except:
+        pass
+    if len(return_dict) == 0:
+        raise Exception("")
     option = input(config["theme"]["color4"]+"Select a song"+Fore.RESET+"~$ ")
     return return_dict[int(option)-1]
 
@@ -39,6 +44,7 @@ def base64_decoding(base64_text):
     text_bytes = (str(text_bytes).replace("\xa7","")).encode('utf-8')
     text = text_bytes.decode('utf-8')
     return text
+
 def download_mp3(url,title):
     song_downloader = YoutubeDL({'format':'bestaudio','outtmpl':'musicterm/'+base64_encoding(title)+'.mp4'})
     song_downloader.extract_info(url)
@@ -47,7 +53,8 @@ def add_to_playlist(song,playlist):
     playlists[playlist]["songs"].append(song)
 
 def play_song(title):
-    os.system("ffplay -autoexit -loglevel quiet -volume " + str(config["volume"])+" -nodisp "+title+".mp4 > /dev/null" )
+    print("\b"*30+config["theme"]["color1"]+"\b\bPlaying: "+config["theme"]["color5"]+ title+config["theme"]["color4"]+" ^C "+config["theme"]["color3"]+">>"+Fore.RESET)
+    os.system("ffplay -autoexit -loglevel quiet -volume " + str(config["volume"])+" -nodisp "+"musicterm/"+base64_encoding(title)+".mp4 > /dev/null" )
 
 def create_playlist(name):
     playlists[name] = {}
@@ -61,10 +68,21 @@ def display_playlists():
         count += 1
         print(config["theme"]["color1"]+str(count)+Fore.RESET+": ("+config["theme"]["color2"]+playlist["name"]+Fore.RESET+")---("+config["theme"]["color3"]+str(len(playlist["songs"]))+Fore.RESET+")")
 
+def random_playlist(pname):
+    ps = playlists[pname]["songs"]
+    max_len = len(ps)
+    rv = []
+    generated = False
+    for i in range(0 , max_len):
+        rv.append(i)
+    random.shuffle(rv)
+    for i in rv:
+        sname = ps[rv[i]]["title"]
+        play_song(sname)
+
 def play_playlist(playlist):
     for song in playlists[playlist]["songs"]:
-        print("\b\b"+config["theme"]["color1"]+"Playing: "+config["theme"]["color5"]+ song["title"]+config["theme"]["color4"]+" ^C "+config["theme"]["color3"]+">>"+Fore.RESET)
-        play_song("musicterm/"+base64_encoding(song["title"]))
+        play_song(song["title"])
 
 def display_songs(playlist):
     count = 0
@@ -79,6 +97,7 @@ def delete_playlist(playlist):
         count += 1
         if playlist["name"] == playlist:
             del pla_l[count-1]
+
 def delete_song(song):                                                                        
     del songs[song["title"]]
     count = 0
@@ -87,7 +106,6 @@ def delete_song(song):
         if s["title"] == song["title"]:
             del son_l[count-1]
 
-
 def delete_from_playlist(playlist,song):
     count = 0
     for s in playlists[playlist]["songs"]:
@@ -95,9 +113,9 @@ def delete_from_playlist(playlist,song):
         if s["title"] == song["title"]:
             del playlists[playlist]["songs"][count-1]
 
-def save_json(dicti,name):
+def save_json(jdict,name):
     file = open(name,"wt")
-    file.write(json.dumps(dicti))
+    file.write(json.dumps(jdict))
     file.close()
 
 def load_json(name):
@@ -122,7 +140,7 @@ try:
     exit = False
 except:
     print("No data or config file founed!")
-banner = pyfiglet.figlet_format(config["banner_text"], font = "slant"  )
+banner = pyfiglet.figlet_format(config["banner_text"], font = "slant")
 print(config["theme"]["color3"] + banner + Fore.RESET)
 while(not exit):
     try:
@@ -155,21 +173,23 @@ while(not exit):
         if y_s[0] == "pplaylist":
             pname = input(config["theme"]["color4"]+"Playlist Name"+Fore.RESET+"~$ ")
             play_playlist(pname)
+        if y_s[0] == "prplaylist":
+            pname = input(config["theme"]["color4"]+"Playlist Name"+Fore.RESET+"~$ ")
+            random_playlist(pname)
         if y_s[0] == "rmfp":
             pname = input(config["theme"]["color4"]+"Playlist Name"+Fore.RESET+"~$ ")
             sname = input(config["theme"]["color4"]+"Song Name"+Fore.RESET+"~$ ")
             delete_from_playlist(pname,songs[sname])
         if y_s[0] == "psong":
             sname = input(config["theme"]["color4"]+"Song Name"+Fore.RESET+"~$ ")
-            print(config["theme"]["color1"]+"\b\bPlaying: "+config["theme"]["color5"]+ sname+config["theme"]["color4"]+" ^C "+config["theme"]["color3"]+">>"+Fore.RESET)
-            play_song("musicterm/"+base64_encoding(songs[sname]["title"]))
+            play_song(songs[sname]["title"])
         if y_s[0] == "dplaylists":
             display_playlists()
         if y_s[0] == "dasongs":
             display_all_songs()
         if y_s[0] == "exit":
             exit = True
-    except:
+    except Exception as e:
         print("Something "+Fore.LIGHTRED_EX+ "failed" + Fore.RESET + "!")
 print("Bye!")
 alldata["playlists"] = playlists
