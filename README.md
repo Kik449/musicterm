@@ -75,13 +75,6 @@ Ffplay is needed, install it depending of your operating system or linux ditro.
 apt: sudo apt install ffmpeg
 snap: sudo snap install ffmpeg
 ```
-Run this code where you want to install the program.       
-```
-git clone https://github.com/Kik449/musicterm
-cd musicterm
-bash install_py.sh
-python3 musicterm.py
-```
 ## Info
 Developed and tested in **Linux Lite** and **Arch** with NVIM editor.      
 And some features in Pops with the help of [ru55o](https://github.com/byru55o).
