@@ -6,12 +6,9 @@ A python program to listen to music from INTERNET in terminal.
 Pytube stopped working, I have patched the error.      
 Git clone again or if you dont want to loose all the songs and playlists replace the old musicterm.py with the newer one and install youtube_dl library.
 ## Dependencies
-They are some python3 libraries: **youtube_dl**, **pyfiglet**, **youtube-search-python** and **colorama**.                                                 
-Also you need **ffplay** command from **FFmpeg**.
-
+They are some python3 libraries: **youtube_dl**, **youtubesearchpython**, **colorama**, **playsound**, **multiprocessing**, **pyfiglet**.                                                 
 ## How it works
-This scripts just downloads audio from youtube videos, no api or anything like that needed.                 
-Then when is requested it executes the **ffplay** command and starts the music.                                
+This scripts just downloads audio from youtube videos, no api or anything like that needed.                                                 
 
 ## Automate tasks with bash
 You can automate tasks by making a bash script.    
@@ -40,7 +37,7 @@ Here is an example.
 Remember an ```echo "exit"``` allways, otherwise it may crash.
 ## Usage      
 Musicterm works with commands.       
-They are 12 commands:         
+They are 13 commands:         
        
 1 : download- To DOWNLOAD the music       
 2 : mkplaylist - To CREATE a playlist         
@@ -58,8 +55,7 @@ They are 12 commands:
        
 All this is in manual.txt :)      
 ## Configuration        
-Set the volume from 0-100 in string format not int (save the value from 0-100 between ```"```)           
-In the config file you can also change the banner text in banner_text.
+In the config file you can change the banner text in banner_text and colors.
 ### Colors cheatsheet
 Prefix: ```\u001b[```
 #### Normal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Light
