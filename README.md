@@ -6,7 +6,7 @@ A python program to listen to music from INTERNET in terminal.
 Pytube stopped working, I have patched the error.      
 Git clone again or if you dont want to loose all the songs and playlists replace the old musicterm.py with the newer one and install youtube_dl library.
 ## Dependencies
-They are some python3 libraries: **youtube_dl**, **youtubesearchpython**, **colorama**, **playsound**, **multiprocessing**, **pyfiglet**.                                                 
+They are some python3 libraries: **youtube_dl**, **youtubesearchpython**, **colorama**, **playsound**, **pyfiglet**.                                                             
 ## How it works
 This scripts just downloads audio from youtube videos, no api or anything like that needed.                                                 
 
@@ -67,10 +67,14 @@ BLUE 34m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BLUE 9
 CYAN 36m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CYAN 96m      
 WHITE 37m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHITE 97m     
 ## Installing
-Ffplay is needed, install it depending of your operating system or linux ditro. 
+Since ffplay was removed, now it uses playsound library.
+To install all the libraries
 ```
-apt: sudo apt install ffmpeg
-snap: sudo snap install ffmpeg
+pip3 install pyfiglet
+pip3 install youtube-search-python
+pip3 install youtube-dl
+pip3 install colorama
+pip3 install playsound
 ```
 ## Info
 Developed and tested in **Linux Lite**, **Kali Linux** and **Arch** with NVIM editor.      
