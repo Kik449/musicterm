@@ -128,7 +128,7 @@ def display_all_songs():
     count = 0
     for song in son_l:
         count += 1
-        print(config["theme"]["color1"]+str(count)+Fore.RESET+": ("+Fore.BLUE+song["title"]+Fore.RESET+")---("+Fore.GREEN+song["time"]+Fore.RESET+")")       
+        print(config["theme"]["color1"]+str(count)+Fore.RESET+": ("+config["theme"]["color2"]+song["title"]+Fore.RESET+")---("+config["theme"]["color3"]+song["time"]+Fore.RESET+")")
 
 try:
     config = load_json("config.json")
