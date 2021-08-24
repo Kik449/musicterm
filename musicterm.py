@@ -88,7 +88,7 @@ def display_songs(playlist):
     count = 0
     for song in playlists[playlist]["songs"]:
         count += 1
-        print(config["theme"]["color1"]+str(count)+Fore.RESET+": ("+config["theme"]["color2"]+song["title"]+Fore.RESET+")---("+config["theme"]["color2"]+song["time"]+Fore.RESET+")")
+        print(config["theme"]["color1"]+str(count)+Fore.RESET+": ("+config["theme"]["color2"]+song["title"]+Fore.RESET+")---("+config["theme"]["color3"]+song["time"]+Fore.RESET+")")
 
 def delete_playlist(playlist):
     del playlists[playlist]
