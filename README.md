@@ -54,6 +54,7 @@ They are 12 commands:
 10: dplaylists - To DISPLAY all the playlists       
 11: dasongs - To DISPLAY all the downloaded songs        
 12: exit - To EXIT the program          
+13: prplaylist - To REPRODUCE a playlist in a random order              
        
 All this is in manual.txt :)      
 ## Configuration        
