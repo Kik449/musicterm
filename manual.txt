@@ -1,5 +1,5 @@
 Musicterm works with commands.
-They are 12 commands:
+They are 13 commands:
 
 1 : download- To DOWNLOAD the music
 2 : mkplaylist - To CREATE a playlist
