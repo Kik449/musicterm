@@ -1,6 +1,6 @@
 # Musicterm
 A python program to listen to music from INTERNET in terminal.
-![musicterm](http://url/to/img.png)
+![musicterm](https://github.com/Kik449/musicterm/raw/main/musicterm.png)
 ## Update!
 Pytube stopped working, I have patched the error.      
 Git clone again or if you dont want to loose all the songs and playlists replace the old musicterm.py with the newer one and install youtube_dl library.
