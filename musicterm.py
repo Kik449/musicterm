@@ -61,7 +61,8 @@ def play_song(title):
     try:
         sound.start()
         while True:
-            pass
+            if not sound.is_alive():
+                raise Exception("")
     except:
         sound.terminate()
 
