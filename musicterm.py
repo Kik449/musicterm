@@ -49,7 +49,7 @@ def base64_decoding(base64_text):
     return text
 
 def download_mp3(url,title):
-    song_downloader = YoutubeDL({'format':'bestaudio','outtmpl':'musicterm/'+base64_encoding(title)+'.mp3'})
+    song_downloader = YoutubeDL({'no-warnings':True,'quiet':True,'format':'bestaudio','outtmpl':'musicterm/'+base64_encoding(title)+'.mp3'})
     song_downloader.extract_info(url)
 
 def add_to_playlist(song,playlist):
