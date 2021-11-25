@@ -4,7 +4,7 @@ from colorama import Fore
 from playsound import playsound
 from multiprocessing import Process
 from pyfiglet import figlet_format 
-import base64,json,random
+import base64,json,random,os
 
 playlists = {}
 songs = {}
@@ -57,14 +57,10 @@ def add_to_playlist(song,playlist):
 
 def play_song(title):
     print("\b"*30+config["theme"]["color1"]+"\b\bPlaying: "+config["theme"]["color5"]+ title+config["theme"]["color4"]+" ^C "+config["theme"]["color3"]+">>"+Fore.RESET)
-    sound = Process(target = playsound, args = ("musicterm/"+base64_encoding(title)+".mp3",))
     try:
-        sound.start()
-        while True:
-            if not sound.is_alive():
-                raise Exception("")
+        os.system("mpv musicterm/"+base64_encoding(title)+".mp3")
     except:
-        sound.terminate()
+        pass
 
 def create_playlist(name):
     playlists[name] = {}
