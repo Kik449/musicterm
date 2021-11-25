@@ -1,7 +1,6 @@
 from youtube_dl import YoutubeDL
 from youtubesearchpython import VideosSearch
 from colorama import Fore
-from playsound import playsound
 from multiprocessing import Process
 from pyfiglet import figlet_format 
 import base64,json,random,os
