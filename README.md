@@ -75,7 +75,6 @@ pip3 install pyfiglet
 pip3 install youtube-search-python
 pip3 install youtube-dl
 pip3 install colorama
-pip3 install playsound
 ```
 ## Info
 Developed and tested in **Linux Lite**, **Kali Linux** and **Arch** with NVIM editor.      
