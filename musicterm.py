@@ -194,6 +194,11 @@ while(not exit):
             display_all_songs()
         if y_s[0] == "exit":
             exit = True
+        alldata["playlists"] = playlists
+        alldata["songs"] = songs
+        alldata["pla_l"] = pla_l
+        alldata["son_l"] = son_l
+        save_json(alldata,"data.json")
     except Exception as e:
         print("Something "+Fore.LIGHTRED_EX+ "failed" + Fore.RESET + "!")
 print("Bye!")
