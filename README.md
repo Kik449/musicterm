@@ -1,5 +1,7 @@
 # Musicterm
 A python program to listen to music from INTERNET in terminal.
+## WARNING
+Musicterm is no longer maintained!
 ## Image
 ![musicterm](https://github.com/Kik449/musicterm/raw/main/musicterm.png)
 ## Update!
